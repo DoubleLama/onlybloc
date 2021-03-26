@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.1'
+gem 'rails', '~> 6.1.2', '>= 6.1.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -12,18 +12,18 @@ gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.0'
+gem 'webpacker', '~> 5.2.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5.2.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.11.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -56,28 +56,27 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # I18n
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 6.0'
 
 # Administrate
-gem 'administrate'
-gem 'administrate-field-active_storage'
+gem 'administrate', '~> 0.15.0'
+gem 'administrate-field-active_storage', '~> 0.3.6'
 
 # Auth
-gem 'devise'
-gem 'dotenv-rails'
+gem 'devise', '~> 4.7', '>= 4.7.3'
 
 # BDD helpers
-gem 'faker'
-gem 'seed_dump'
-gem 'table_print'
+gem 'faker', '~> 2.17'
+gem 'seed_dump', '~> 3.3', '>= 3.3.1'
+gem 'table_print', '~> 1.5', '>= 1.5.7'
 
 # Geolocation
-gem 'geocoder'
+gem 'geocoder', '~> 1.6', '>= 1.6.6'
 
 # mailing
-gem 'mailjet'
+gem 'mailjet', '~> 1.6'
 
 # ruby linter
-gem 'parser'
-gem 'rubocop-rails', require: false
-gem 'solargraph'
+gem 'parser', '~> 3.0'
+gem 'rubocop-rails', '~> 2.9', '>= 2.9.1', require: false
+gem 'solargraph', '~> 0.40.4'
