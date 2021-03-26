@@ -1,0 +1,39 @@
+<div class="page-header header-filter" style= "background-image: url(https://images.pexels.com/photos/976872/pexels-photo-976872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260); background-size: cover; background-position: top center;">
+  <div class="container mt-5 pt-5">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-10 ml-auto mr-auto ">
+        <div class="card card-login card-hidden text-center">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title text-center px-3 mb-1">Nouveau mot de passe</h4>
+          </div>
+          <div class="card-body">
+            <div class="field">
+              <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
+                <%= f.hidden_field :reset_password_token %>
+              </div>
+              <div class="field">
+                <%= f.label :mot_de_passe, "Nouveau mot de passe" %><br />
+                <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+                <% end %>
+                <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+              </div>
+              <div class="field">
+                <%= f.label :confirmation_de_mot_de_passe, "Confirmer le nouveau mot de passe" %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              </div>
+              <div class="row">
+                <div class="actions mx-auto pt-5" >
+                  <button class="btn btn-primary btn-round mb-3">    Changer mon mot de passe
+                  </button>
+                </div>
+              <% end %>
+            </div>
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

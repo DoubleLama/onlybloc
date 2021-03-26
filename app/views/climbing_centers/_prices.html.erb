@@ -1,0 +1,321 @@
+<div class="col-md-4">
+  <div class="text-center">
+    <h3><small>A l'unité</small></h3>
+  </div>
+  <div class="card card-nav-tabs">
+    <div class="card-header card-header-info">
+      <div class="nav-tabs-navigation">
+        <div class="nav-tabs-wrapper">
+          <ul class="nav nav-tabs" data-tabs="tabs">
+            <li class="nav-item">
+              <%= link_to "Tarif normal", "#one-standard",class:"nav-link active show", data:{toggle:"tab"} %>
+              <div class="ripple-container"></div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Tarif réduit", "#one-reduce",class:"nav-link", data:{toggle:"tab"} %>
+              <div class="ripple-container"></div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Happy hours", "#one-hh",class:"nav-link", data:{toggle:"tab"} %>
+              <div class="ripple-container"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card-body ">
+      <div class="tab-content">
+        <div class="tab-pane active show" id="one-standard">
+          <table class="table table-striped">
+            <tbody>
+              <% if check_price(@climbing_center.standard_entry )==true %>
+                <tr>
+                  <td class="">Tarif une entrée: </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.standard_entry) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.standard_entry_under_twelve )==true %>
+                <tr>
+                  <td class="">Tarif -12 ans : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.standard_entry_under_twelve) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.standard_entry_under_six )==true %>
+                <tr>
+                  <td class="">Tarif -6 ans : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.standard_entry_under_six) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.standard_entry_under_five )==true %>
+                <tr>
+                  <td class="">Tarif -5 ans : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.standard_entry_under_five) %> €</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" id="one-reduce">
+          <table class="table table-striped">
+            <tbody>
+              <% if check_price(@climbing_center.standard_entry_reduced )==true %>
+                <tr>
+                  <td class="">Tarif réduit : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.standard_entry_reduced) %> €</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" id="one-hh">
+          <table class="table table-striped">
+            <tbody>
+              <% if check_price(@climbing_center.happy_hours_entry )==true %>
+                <tr>
+                  <td class="">Tarif happy hours : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.happy_hours_entry) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.happy_hours_entry_reduced )==true %>
+                <tr>
+                  <td class="">Tarif réduit happy hours : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.happy_hours_entry_reduced) %> €</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="text-center">
+    <h3><small>10 entrées</small></h3>
+  </div>
+  <div class="card card-nav-tabs">
+    <div class="card-header card-header-success">
+      <div class="nav-tabs-navigation">
+        <div class="nav-tabs-wrapper">
+          <ul class="nav nav-tabs" data-tabs="tabs">
+            <li class="nav-item">
+              <%= link_to "Tarif normal", "#ten-standard",class:"nav-link active show", data:{toggle:"tab"} %>
+              <div class="ripple-container"></div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Tarif réduit", "#ten-reduce",class:"nav-link", data:{toggle:"tab"} %>
+              <div class="ripple-container"></div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Happy hours", "#ten-hh",class:"nav-link", data:{toggle:"tab"} %>
+              <div class="ripple-container"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card-body ">
+      <div class="tab-content">
+        <div class="tab-pane active show" id="ten-standard">
+          <table class="table table-striped">
+            <tbody>
+              <% if check_price(@climbing_center.ten_entries )==true %>
+                <tr>
+                  <td class="">Tarif 10 entrées: </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.ten_entries) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.ten_entries_under_twelve )==true %>
+                <tr>
+                  <td class="">Tarif 10 entrées -12 ans : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.ten_entries_under_twelve) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.ten_entries_under_six)==true %>
+                <tr>
+                  <td class="">Tarif 10 entrées -6 ans : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.ten_entries_under_six) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.ten_entries_under_five)==true %>
+                <tr>
+                  <td class="">Tarif 10 entrées -5 ans : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.ten_entries_under_five) %> €</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" id="ten-reduce">
+          <table class="table table-striped">
+            <tbody>
+              <% if check_price(@climbing_center.ten_entries_reduced )==true %>
+                <tr>
+                  <td class="">Tarif réduit 10 entrées : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.ten_entries_reduced) %> €</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" id="ten-hh">
+          <table class="table table-striped">
+            <tbody>
+              <% if check_price(@climbing_center.ten_entries_happy_hours )==true %>
+                <tr>
+                  <td class="">Tarif 10 entrées happy hours: </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.ten_entries_happy_hours) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.ten_entries_happy_hours_reduced )==true %>
+                <tr>
+                  <td class="">Tarif réduit 10 entrées happy hours : </td>
+                  <td class="text-center"><%= hide_0(@climbing_center.ten_entries_happy_hours_reduced) %> €</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="text-center">
+    <h3><small>Abonnements</small></h3>
+  </div>
+  <div class="card card-nav-tabs">
+    <div class="card-header card-header-warning">
+      <div class="nav-tabs-navigation">
+        <div class="nav-tabs-wrapper">
+          <ul class="nav nav-tabs" data-tabs="tabs">
+            <li class="nav-item">
+              <%= link_to "Tarif normal", "#sub-standard",class:"nav-link active show", data:{toggle:"tab"} %>
+              <div class="ripple-container"></div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Tarif réduit", "#sub-reduce",class:"nav-link", data:{toggle:"tab"} %>
+              <div class="ripple-container"></div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Happy hours", "#sub-hh",class:"nav-link", data:{toggle:"tab"} %>
+              <div class="ripple-container"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="tab-content">
+        <div class="tab-pane active show" id="sub-standard">
+          <table class="table table-striped">
+            <tbody>
+              <% if check_price(@climbing_center.monthly_subscription )==true %>
+                <tr>
+                  <td class="">Tarif mensuel :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.monthly_subscription) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.monthly_subscription_couple )==true %>
+                <tr>
+                  <td class="">Tarif mensuel couple :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.monthly_subscription_couple) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.monthly_subscription_child )==true %>
+                <tr>
+                  <td class="">Tarif mensuel enfant :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.monthly_subscription_child) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.yearly_subscription )==true %>
+                <tr>
+                  <td class="">Tarif annuel :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.yearly_subscription) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.yearly_subscription_one_center)==true %>
+                <tr>
+                  <td class="">Tarif annuel salle unique :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.yearly_subscription_one_center) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.yearly_subscription_couple )==true %>
+                <tr>
+                  <td class="">Tarif annuel couple :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.yearly_subscription_couple) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.yearly_subscription_one_center_under_twelve )  ==true %>
+                <tr>
+                  <td class="">Tarif annuel -12 ans salle unique :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.yearly_subscription_one_center_under_twelve) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.yearly_subscription_child )==true %>
+                <tr>
+                  <td class="">Tarif annuel enfant :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.yearly_subscription_child) %> €</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" id="sub-reduce">
+          <table class="table table-striped">
+            <tbody>
+              <% if check_price(@climbing_center.monthly_subscription_reduced )==true %>
+                <tr>
+                  <td class="">Tarif réduit mensuel :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.monthly_subscription_reduced) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.monthly_subscription_couple_reduced )==true %>
+                <tr>
+                  <td class="">Tarif réduit mensuel couple :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.monthly_subscription_couple_reduced) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.yearly_subscription_reduced )==true %>
+                <tr>
+                  <td class="">Tarif réduit annuel:</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.yearly_subscription_reduced) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.yearly_subscription_reduced_one_center )==true %>
+                <tr>
+                  <td class="">Tarif réduit annuel salle unique :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.yearly_subscription_reduced_one_center) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.yearly_subscription_couple_reduced )==true %>
+                <tr>
+                  <td class="">Tarif réduit annuel couple :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.yearly_subscription_couple_reduced) %> €</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane" id="sub-hh">
+          <table class="table table-striped">
+            <tbody>
+              <% if check_price(@climbing_center.monthly_subscription_happy_hours )==true %>
+                <tr>
+                  <td class="">Tarif mensuel happy hours :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.monthly_subscription_happy_hours) %> €</td>
+                </tr>
+              <% end %>
+              <% if check_price(@climbing_center.yearly_subscription_happy_hours )==true %>
+                <tr>
+                  <td class="">Tarif annuel happy hours :</td>
+                  <td class="text-center"><%= hide_0(@climbing_center.yearly_subscription_happy_hours) %> €</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

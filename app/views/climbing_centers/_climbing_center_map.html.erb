@@ -1,0 +1,14 @@
+<div class="col-md-6">
+  <div class="latitude d-none"><%= @climbing_center.latitude %></div>
+  <div class="longitude d-none"><%= @climbing_center.longitude %></div>
+  <div id="map" style="height: 400px; width:auto"></div>
+  <div class="">
+    <h6 class="card-title">Adresse</h6>
+    <p class="card-description">
+      <%= @climbing_center.address %>
+    </p>
+    <%= link_to "https://www.google.fr/maps/place/#{@climbing_center.address}", target: "_blank", class:"btn-link" do%>
+      <i class="material-icons">location_on</i> Ouvrir avec Google Maps
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="card">
+  <% if params[:profile] == "standard_entry" %>
+    <% centers_in_order = @climbing_centers.order("standard_entry") %>
+    <% centers_in_order.each { |center| %>
+    <h3><%= center.name %></h3>
+    <% } %>
+  <% end %>
+  <% if params[:profile] == "standard_entry_reduced" %>
+    <%  centers_in_order = @climbing_centers.order("standard_entry_reduced") %>
+    <% centers_in_order.each { |center| %>
+    <h3><%= center.name %></h3>
+    <% } %>
+  <% end %>
+  <%  if params[:profile] == "standard_entry_under_twelve" %>
+    <%  centers_in_order = @climbing_centers.order ("standard_entry_under_twelve") %>
+    <% centers_in_order.each { |center| %>
+    <h3><%= center.name %></h3>
+    <% } %>
+  <% end %>
+  <%  if params[:filter] == "rating" %>
+    <%  centers_in_order = @climbing_centers.order ("") %>
+    <% centers_in_order.each { |center| %>
+    <h3><%= center.name %></h3>
+    <% } %>
+  <% end %>
+</div>

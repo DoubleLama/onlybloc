@@ -1,0 +1,56 @@
+<h6 class="card-title">Note générale</h6>
+<% @climbing_center.average_total_rating.to_i.times do  %>
+  <i class="material-icons text-primary">star</i>
+<% end %>
+<% (5- @climbing_center.average_total_rating.to_i).times do  %>
+  <i class="material-icons text-primary">star_border</i>
+<% end %>
+<p class="card-description">Ambiance</p>
+<% @climbing_center.average_ambiance.to_i.times do  %>
+  <i class="material-icons text-secondary">star</i>
+<% end %>
+<% (5- @climbing_center.average_ambiance.to_i).times do  %>
+  <i class="material-icons text-secondary">star_border</i>
+<% end %>
+<p class="card-description">Renouvellement des blocs</p>
+<% @climbing_center.average_route.to_i.times do  %>
+  <i class="material-icons text-secondary">star</i>
+<% end %>
+<% (5- @climbing_center.average_route.to_i).times do  %>
+  <i class="material-icons text-secondary">star_border</i>
+<% end %>
+<p class="card-description">Services</p>
+<% @climbing_center.average_service.to_i.times do  %>
+  <i class="material-icons text-secondary">star</i>
+<% end %>
+<% (5- @climbing_center.average_service.to_i).times do  %>
+  <i class="material-icons text-secondary">star_border</i>
+<% end %>
+<p class="card-description">Propreté</p>
+<% @climbing_center.average_cleanliness.to_i.times do  %>
+  <i class="material-icons text-secondary">star</i>
+<% end %>
+<% (5- @climbing_center.average_cleanliness.to_i).times do  %>
+  <i class="material-icons text-secondary">star_border</i>
+<% end %>
+<div class="row">
+  <div class="col-md-8">
+    <div id="accordion" role="tablist">
+      <div class="card card-collapse">
+        <div class="" role="tab" id="headingTwo">
+          <h5 class="mb-0">
+            <%= link_to "#collapseTwo", data:{toggle:"collapse"}, aria:{expanded:"false",controls:"collapseTwo"} do %>
+              Noter la salle
+              <i class="material-icons">keyboard_arrow_down</i>
+            <% end %>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <%= render 'ratings/form'%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="page-header header-filter" style= "background-image: url(https://images.pexels.com/photos/976872/pexels-photo-976872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260); background-size: cover; background-position: top center;" >
+  <div class="container mt-5">
+    <div class="row">
+      <div class="mt-5 col-lg-4 col-md-7 col-sm-10 ml-auto mr-auto">
+        <div class="card card-login card-hidden text-center">
+          <div class="card-header card-header-primary text-center">
+            <h4 class="card-title">Se connecter</h4>
+          </div>
+          <div class="card-body ml-3">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="field">
+                <%= f.label "Nom d'utilisateur" %><br />
+                <%= f.text_field :login %>
+              </div>
+              <h4 class="title text-dark">OU</h4>
+              <div class="field">
+                <%= f.label :Adresse_mail %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              </div>
+              <hr>
+              <div class="field">
+                <%= f.label :Mot_de_passe %><br />
+                <%= f.password_field :password, autocomplete: "current-password" %>
+              </div>
+              <% if devise_mapping.rememberable? %>
+                <div class="field" style="margin-top:3px">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :se_souvenir_de_moi %>
+                </div>
+              <% end %>
+              <div class="row" style="margin-top: 10px; margin-left: 4px">
+                <div class="actions col-md-10 mx-auto">
+                  <button class="btn btn-primary btn-round">Connexion
+                    <div class="ripple-container"></div>
+                  </button>
+                </div>
+              <% end %>
+              <div class="m-2">
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>

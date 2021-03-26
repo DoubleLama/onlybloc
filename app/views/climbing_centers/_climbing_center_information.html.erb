@@ -1,0 +1,29 @@
+<div class="col-md-3 my-auto">
+  <div class="card-body">
+    <h6 class="card-title">Coordonées</h6>
+    <p class="btn-link">
+      <%= link_to "Lien vers #{@climbing_center.name}", @climbing_center.url%>
+    </p>
+    <p>Tél : <%= @climbing_center.phone %>
+    </p>
+    <p>Email :</p>
+    <p class="btn-link">
+      <%= mail_to @climbing_center.email %>
+    </p>
+  </div>
+  <div class="card-body">
+    <h6 class="card-title">Horaires</h6>
+    <p class="card-description">
+      <%= @climbing_center.hours %>,
+    </p>
+    <% if @climbing_center.restaurant_pub_hours? then %>
+      <p class="card-description">Horaires du bar/restaurant :<br>
+        <%= @climbing_center.restaurant_pub_hours %>
+      </p>
+    <% end %>
+  </div>
+  <div class="card-body">
+    <h6 class="card-title">Services</h6>
+    <%= render 'services' %>
+  </div>
+</div>

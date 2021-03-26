@@ -1,0 +1,14 @@
+<div class="page-header header-filter" style= "background-image: url(https://images.pexels.com/photos/976872/pexels-photo-976872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260); background-size: cover; background-position: top center;" >
+  <div class="container">
+    <div class="row">
+      <div class="container ml-auto mr-auto col-md-6 mt-5">
+        <div class="card card-profile">
+          <div class="card-body">
+            <h4 class="card-title"> Profil de <%= @user.username%> </h4>
+            <%= link_to "modifier les identifiants", edit_user_registration_path, class: "btn btn-info btn-round" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

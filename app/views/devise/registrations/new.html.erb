@@ -1,0 +1,55 @@
+<div class="page-header header-filter" style= "background-image: url(https://images.pexels.com/photos/976872/pexels-photo-976872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);" width="100%">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-4 col-md-7 col-sm-10 ml-auto mr-auto">
+        <div class="card card-login card-hidden text-center">
+          <div class="card-header card-header-primary text-center">
+            <h4 class="card-title">S'inscrire</h4>
+          </div>
+          <div class="card-body">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <span class="bmd-form-group">
+                <div class="field">
+                  <%= f.label :Adresse_mail %>
+                  <br>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                </div>
+              </span>
+              <span class="bmd-form-group">
+                <div class="field">
+                  <label>Nom d'utilisateur (facultatif)</label><br />
+                  <%= f.text_field :username %>
+                </div>
+              </span>
+              <div class="field">
+                <%= f.label :Mot_de_passe %>
+                <% if @minimum_password_length %>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "new-password" %>
+              </div>
+              <i>(<%= @minimum_password_length %> caractères minimum)</i>
+              <span class="bmd-form-group">
+                <div class="field">
+                  <%= f.label :Confirmation_de_mot_de_passe %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                </div>
+              </span>
+            </div>
+            <div>
+            <button class="btn btn-primary btn-round">Inscription
+              <div class="ripple-container"></div>
+            </button>
+            </div>
+          <% end %>
+          <div class="m-2">
+          <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>

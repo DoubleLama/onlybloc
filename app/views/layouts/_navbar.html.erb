@@ -1,0 +1,67 @@
+<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+  <div class="container">
+    <div class="navbar-translate">
+      <%= link_to image_tag("OB.png", height:70), root_path%>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse right">
+      <ul class="navbar-nav">
+        <li class="dropdown nav-item">
+          <%= link_to nil, class:"dropdown-toggle nav-link", data:{toggle:"dropdown"} do%>
+            <i class="material-icons">location_city</i> Villes
+          <% end %>
+          <div class="ripple-container"></div>
+          <div class="dropdown-menu dropdown-with-icons navbar-ob">
+            <% City.order('name ASC').all.each do |city| %>
+              <%= link_to "#{city.name}", city_path(city.id), class: 'dropdown-item' %>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+      <div class="justify-content-between">
+        <%= render 'layouts/alert_messages'%>
+      </div>
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <% if current_user.is_admin?%>
+            <li class="nav-item">
+              <%= link_to admin_root_path, class: "nav-link" do %>
+                <i class="material-icons">https</i> Admin
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+        <li class="nav-item">
+          <%= link_to root_path, class: "nav-link" do %>
+            <i class="material-icons">home</i> Accueil
+          <% end %>
+        </li>
+        <li class="dropdown nav-item">
+          <%= link_to nil,class:"dropdown-toggle nav-link", data:{toggle:"dropdown"},aria:{expanded:"false"} do %>
+            <i class="material-icons">face</i> Mon Compte
+            <div class="ripple-container"></div>
+          <% end %>
+          <div class="dropdown-menu dropdown-with-icons">
+            <% if user_signed_in? %>
+              <%= link_to "Modifier mot de passe", edit_user_registration_path, class: 'dropdown-item'  %>
+              <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+            <% else %>
+              <%= link_to "Se connecter", new_user_session_path, class: 'dropdown-item'  %>
+              <%= link_to "S'inscrire", new_user_registration_path, class: 'dropdown-item'  %>
+            <% end %>
+          </div>
+        </li>
+        <li class="nav-item">
+          <%= link_to about_us_path, class: "nav-link" do %>
+            <i class="material-icons">information</i> A propos
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

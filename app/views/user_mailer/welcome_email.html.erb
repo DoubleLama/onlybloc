@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <br>
+    <br>
+    <%= image_tag "OB.png", height:70 %>
+    <br>
+     <br>
+    <div class="text-center">
+      <h3>Salut <%= @user.username %> et bienvenue chez OnlyBloc !</h3>
+      <br>
+       <br>
+      Tu t'es inscrit sur <strong>OnliBloc</strong> en utilisant l'e-mail suivant : <%= @user.email %>.
+      <p>Pour accéder au site, connecte-toi via : https://only-bloc-stagging.herokuapp.com</p>
+      À très vite sur <strong>OnlyBloc</strong> !
+    </div>
+    <br>
+    <br>
+    <br>
+    <p class="text-muted">Team Toulouse: </p>
+    <p class="text-muted">Nathan CHATEAU, Hadrien MOUSAILLON, Amy MCARTHUR et Xuan WANG </p>
+  </body>
+</html>

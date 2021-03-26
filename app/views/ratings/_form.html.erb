@@ -1,0 +1,10 @@
+<div class="container">
+  <%= form_tag climbing_center_ratings_path(@climbing_center), method: "post" do %>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div class="card-body"><label>Ambiance :</label><%= select_tag "ambiance", options_for_select((1..5).step(1)), class:"selectpicker"  %></div>
+    <div class="card-body"><label>Services :</label><%= select_tag "service", options_for_select((1..5).step(1)), class:"selectpicker"   %></div>
+    <div class="card-body"><label>Renouvellement des blocs :</label><%= select_tag "route", options_for_select((1..5).step(1)), class:"selectpicker"   %></div>
+    <div class="card-body"><label>Propreté :</label><%= select_tag "cleanliness", options_for_select((1..5).step(1)), class:"selectpicker"   %></div>
+    <%= submit_tag "noter", class:"btn btn-primary"%>
+  </div>
+<% end %>

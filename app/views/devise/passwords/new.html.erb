@@ -1,0 +1,32 @@
+<div class="page-header header-filter" style= "background-image: url(https://images.pexels.com/photos/976872/pexels-photo-976872.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260); background-size: cover; background-position: top center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-10 mx-auto ">
+        <div class="card card-login">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title text-center px-3 mb-1">Réinitialiser le mot de passe</h4>
+          </div>
+          <div class=" text-center">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <%= f.label :Adresse_mail %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              <div class="row ">
+                <div class="actions mx-auto pt-5" >
+                  <button class="btn btn-primary btn-round mb-3">Réinitialiser le mot de passe
+                    <div class="ripple-container"></div>
+                  </button>
+                </div>
+              <% end %>
+            </div>
+            <div class="row">
+              <div class="col-md-5 offset-7 mb-2">
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

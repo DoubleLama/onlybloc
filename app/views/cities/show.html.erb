@@ -1,0 +1,36 @@
+<div class="header-filter page-header" data-parallax="true" style="background-image: url(<%=@city.image_url%>); height: 400px; transform: translate3d(0px, 0px, 0px);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto text-center">
+        <h1 class="title"><%= @city.name%></h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="">
+  <div class="row">
+    <div id="map" style="height: 400px" class="m-2">
+    </div>
+  </div>
+  <div class="container-fluid pt-2">
+    <%= render 'filter' %>
+  </div>
+  <hr>
+  <div class="container pt-2">
+    <%= render 'climbing_center' %>
+  </div>
+</div>
+<script>
+  var mymap = null;
+  function initMap() {
+      mymap = L.map('map', {scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: !L.Browser.mobile}).setView([<%=@city.latitude%>, <%=@city.longitude%>], 12);
+
+      L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=<%= ENV['MAPBOX_TOKEN'] %>', {
+        tileSize: 512,
+        zoomOffset: -1,
+    }).addTo(mymap);
+  }
+  window.onload = function(){
+    initMap();
+  };
+</script>

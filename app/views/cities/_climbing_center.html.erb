@@ -1,0 +1,91 @@
+<div class="row">
+  <% get_order_type %>
+  <% @climbing_centers_ordered.each do |center| %>
+    <% if check_price(center[@price_type]) == true %>
+      <div class="col-lg-4 col-sm-10 mb-4 d-flex align-items-stretch">
+        <div class="card card-body text-align-center">
+          <div class="card-header card-header-image" >
+            <%= link_to climbing_center_path(center.id) do%>
+              <% climbing_center_picture = ClimbingCenter.find(center.id).image_url %>
+              <%= image_tag "#{climbing_center_picture}", style: "height:200px; object-fit:cover;background:;" %>
+            <% end %>
+          </div>
+          <h3 class="text-center card-title pt-2">
+            <%= center.name %>
+          </h3>
+          <div class="row d-flex justify-content-center">
+            <% if center.average_total_rating == 0 || center.average_total_rating == nil  %>
+              <p class="card-description"><em>Pas encore de note</em></p>
+            <% else %>
+              <h4 class="card-description">
+                <% center.average_total_rating.to_i.times do  %>
+                  <i class="material-icons text-primary">star</i>
+                <% end %>
+                <% (5- center.average_total_rating.to_i).times do  %>
+                  <i class="material-icons text-primary">star_border</i>
+                <% end %>
+              </h4>
+            <% end %>
+          </div>
+          <div class="row pl-4">
+            <% if center.hammam==true then %>
+              <%= link_to nil,class:"mx-2", data:{toggle:"tooltip",placement:"top",container:"body",original_title:"Hammam"} do %>
+                <i class="text-danger material-icons">hot_tub</i>
+                <div class="ripple-container">
+                </div>
+              <% end %>
+            <% end %>
+            <% if center.shop==true then %>
+              <%= link_to nil,class:"mx-2 ", data:{toggle:"tooltip",placement:"top",container:"body",original_title:"Boutique"} do %>
+                <i class="text-info material-icons">store_mall_directory</i>
+                <div class="ripple-container">
+                </div>
+              <% end %>
+            <% end %>
+            <% if center.yoga_classes==true then %>
+              <%= link_to nil,class:"mx-2", data:{toggle:"tooltip",placement:"top",container:"body",original_title:"Cours de yoga"} do %>
+                <%= image_tag "https://cdn.onlinewebfonts.com/svg/img_531726.png", style:'width:1.1em'%>
+                <div class="ripple-container">
+                </div>
+              <% end %>
+            <% end %>
+            <% if center.workout_space==true then %>
+              <%= link_to nil,class:"mx-2", data:{toggle:"tooltip",placement:"top",container:"body",original_title:"Salle de musculation"} do %>
+                <i class="text-warning material-icons">fitness_center</i>
+                <div class="ripple-container">
+                </div>
+              <% end %>
+            <% end %>
+            <% if center.sauna==true then %>
+              <%= link_to nil,class:"mx-2", data:{toggle:"tooltip",placement:"top",container:"body",original_title:"Sauna"} do %>
+                <%= image_tag "https://user-images.githubusercontent.com/10913793/46910991-55e1e100-cf50-11e8-8d4d-33abdf1fdb82.png", style:'width:1.5em'%>
+                <div class="ripple-container">
+                </div>
+              <% end %>
+            <% end %>
+            <% if center.restaurant==true then %>
+              <%= link_to nil,class:"mx-2", data:{toggle:"tooltip",placement:"top",container:"body",original_title:"Restaurant"} do %>
+                <i class="text-success material-icons">restaurant</i>
+                <div class="ripple-container">
+                </div>
+              <% end %>
+            <% end %>
+            <% if center.pub==true then %>
+              <%= link_to nil,class:"mx-2", data:{toggle:"tooltip",placement:"top",container:"body",original_title:"Bar"} do %>
+                <i class="text-primary material-icons">local_bar</i>
+                <div class="ripple-container">
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="card-body p-3">
+            <h4 class="card-description text-secondary">
+              <%= @price_label%> <%= hide_0(center[@price_type])%> €
+            </h4>
+          </div>
+          <%= link_to 'Découvrir la salle', climbing_center_path(center.id), class: "title btn btn btn-primary align-bottom m-2" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,118 @@
+<h2 class="title text-center">Tes critères</h2>
+<hr>
+<form>
+  <div class="container">
+    <div class="row d-flex justify-content-between">
+      <div class="col-md-2 pt-3">
+        <div class="dropdown bootstrap-select">
+          <select class="selectpicker" data-style="select-with-transition" name="profile">
+            <option value="standard">Tarif normal</option>
+            <option value="reduced">Tarif réduit</option>
+            <option value="child">Tarif enfant</option>
+            <option value="couple">Tarif couple</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2 pt-3">
+        <div class="dropdown bootstrap-select">
+          <select class="selectpicker text-center" data-style="select-with-transition" name="entry">
+            <option value="one_entry">1 entrée</option>
+            <option value="ten_entries">10 entrées</option>
+            <option value="monthly">Abonnement mensuel</option>
+            <option value="yearly">Abonnement annuel</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2 pt-3">
+        <div class="dropdown bootstrap-select col-md-12">   
+          <div class="selectpicker" id="headingTwo">
+            <%= link_to "Services","#collapseTwo", class:"btn  dropdown-toggle select-with-transition text-left",data:{toggle:"collapse"}%>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" style="select-with-transition">
+            <div class="form-check selectpicker">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="hammam" value="hammam">
+                <i class='text-danger material-icons'>hot_tub</i> Hammam
+                <span class="circle">
+                  <span class="check"></span>
+                </span>
+              </label>
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="sauna" value="sauna">
+                <%= image_tag 'https://user-images.githubusercontent.com/10913793/46910991-55e1e100-cf50-11e8-8d4d-33abdf1fdb82.png', style: 'width:1.8em' %>
+                Sauna
+                <span class="circle">
+                  <span class="check"></span>
+                </span>
+              </label>
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="shop" value="shop">
+                <i class='text-info material-icons'>store_mall_directory</i> Boutique
+                <span class="circle">
+                  <span class="check"></span>
+                </span>
+              </label>
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="yoga_classes" value="yoga_classes">
+                <%= image_tag 'https://cdn.onlinewebfonts.com/svg/img_531726.png', style: 'width:1.6em' %> Cours de yoga
+                <span class="circle">
+                  <span class="check"></span>
+                </span>
+              </label>
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="workout_space" value="workout_space">
+                <i class='text-warning material-icons'>fitness_center</i> Salle de musculation
+                <span class="circle">
+                  <span class="check"></span>
+                </span>
+              </label>
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="restaurant" value="restaurant">
+                <i class='text-success material-icons'>restaurant</i> Restaurant
+                <span class="circle">
+                  <span class="check"></span>
+                </span>
+              </label>
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="climbing_wall" value="climbing_wall">
+                <%= image_tag 'https://image.flaticon.com/icons/svg/1403/1403621.svg', style: 'width:1.6em' %> Mur à corde
+                <span class="circle">
+                  <span class="check"></span>
+                </span>
+              </label>
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="pub" value="pub">
+                <i class='text-primary material-icons'>local_bar</i> Bar
+                <span class="circle">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 pt-3 ">
+        <div class="dropdown bootstrap-select">
+          <select class="selectpicker" data-style="select-with-transition" title="Trier par" name="order">
+            <option value="rating">Popularité</option>
+            <option value="price">Prix</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2 pt-3">
+        <div class="togglebutton">
+          <label>
+            <input type="checkbox" name="happy_hours" value="true">
+            <span class="toggle"></span>
+            <h6 class="text-dark">Happy Hours :</h6>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center">
+        <input type="submit" value="Rechercher" class="title btn btn-info" />
+      </div>
+    </div>
+  </div>
+</form>

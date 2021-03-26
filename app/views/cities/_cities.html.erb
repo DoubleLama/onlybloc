@@ -1,0 +1,29 @@
+<div class="container">
+  <h2 class="title text-center" id="card-all-cities">Choisis ta ville</h2>
+  <div class="row">
+    <% City.order('name ASC').all.each do |city|%>
+      <div class="col-lg-3 col-md-4 mb-2">
+        <div class="card card-blog text-align-center">
+          <div class="card-header card-header-image" >
+            <%= link_to city_path(city.id) do%>
+              <% city_picture = City.find(city.id).image_url %>
+              <%= image_tag "#{city_picture}",style: "height:150px; object-fit:cover;" %>
+              <div class="primary mx-auto card-title pt-2">
+                <h2 class="title">
+                  <%= city.name %>
+                </h2>
+              </div>
+            <% end %>
+          </div>
+            <div class="card-body p-3">
+            <% if ClimbingCenter.where(city_id:city.id).size > 1 %>
+              <%= link_to "#{ClimbingCenter.where(city_id:city.id).size} salles", city_path(city.id),class: "title btn btn-block btn-primary align-bottom my-3" %>
+            <% else %>
+              <%= link_to "#{ClimbingCenter.where(city_id:city.id).size} salle", city_path(city.id), class: "title btn btn-block btn-primary align-bottom my-3" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end%>
+  </div>
+</div>

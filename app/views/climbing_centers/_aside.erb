@@ -1,0 +1,12 @@
+<div class="col-md-3 my-auto">
+  <div>
+    <% if user_signed_in? %>
+      <% if current_user.is_admin?%>
+        <%= link_to "Edit cette salle", admin_climbing_center_path(@climbing_center.id), class:"btn btn-second" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="card-body">
+    <%= render 'ratings/show'%>
+  </div>
+</div>

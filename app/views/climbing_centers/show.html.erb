@@ -1,0 +1,51 @@
+<div class="header-filter page-header" data-parallax="true" style="background-image: url(<%=@climbing_center.image_url%>); height: 400px; transform: translate3d(0px, 0px, 0px);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto text-center">
+        <h1 id="climbing-center-name" class="title"><%= @climbing_center.name%></h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main main-raised col-lg-10 col-md-12 mx-auto">
+  <div class="container">
+    <div class="row">
+      <%= render 'climbing_center_information' %>
+      <%= render 'climbing_center_map'%>
+      <%= render 'aside' %>
+      <%= render 'social_network'%>
+    </div>
+    <hr>
+    <div class="row">
+      <%= render 'prices'%>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-8 mx-auto text-center">
+        <%= render 'comments/comment'%>
+      </div>
+      <div class="col-md-8 mx-auto text-center">
+        <%= render 'comments/form'%>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <%= render 'other_centers'%>
+    </div>
+  </div>
+</div>
+<script>
+  var mymap = null;
+  function initMap() {
+      mymap = L.map('map', {scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: !L.Browser.mobile}).setView([<%=@climbing_center.latitude%>, <%=@climbing_center.longitude%>], 14);
+      var marker = L.marker([<%=@climbing_center.latitude%>, <%=@climbing_center.longitude%>]).addTo(mymap);
+      marker.bindPopup("<%=@climbing_center.name%>");
+      L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=<%= ENV['MAPBOX_TOKEN'] %>', {
+        tileSize: 512,
+        zoomOffset: -1,
+    }).addTo(mymap);
+  }
+  window.onload = function(){
+  initMap();
+  };
+</script>

@@ -1,0 +1,24 @@
+<div class="col-6 mx-auto">
+  <h3 class="text-center">Laisse un commentaire </h3>
+  <br>
+  <% if user_signed_in? %>
+    <div class="media media-post d-flex flex-row-reverse">
+      <div class="media-body">
+        <%= form_tag climbing_center_comments_path(@climbing_center), method: "post" do %>
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <span class="bmd-form-group">
+            <%= text_area_tag 'body',"", rows:"2", class: "form-control", placeholder: "Cette salle est géniale!"%>
+          </span>
+          <div class="media-footer">
+            <%= submit_tag "Commenter", class:"btn btn-primary btn-wd float-right", remote: true %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <h3><small><em>- Il faut être connecté -</em></small></h3>
+    <div class="text-center">
+      <%= link_to "Se connecter", new_user_session_path, class:"btn title btn-primary" %>
+    </div>
+  <% end %>
+</div>

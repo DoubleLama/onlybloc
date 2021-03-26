@@ -1,0 +1,19 @@
+<br>
+<%= image_tag "OB.png", height:70 %>
+<br>
+<br>
+<br>
+<br>
+<div class="text-center">
+  <p>Bonjour, <%= @email %>!</p>
+  <% if @resource.try(:unconfirmed_email?) %>
+    <p>Nous vous contactons pour vous informer que votre adresse e-mail est modifiée en <%= @resource.unconfirmed_email %>.</p>
+  <% else %>
+    <p>Nous vous contactons pour vous informer que votre adresse e-mail a été remplacée par <%= @resource.email %>.</p>
+  <% end %>
+</div>
+<br>
+<br>
+<br>
+<p class="text-muted">Team Toulouse: </p>
+<p class="text-muted">Nathan CHATEAU, Hadrien MOUSAILLON, Amy MCARTHUR et Xuan WANG </p>

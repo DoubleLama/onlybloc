@@ -1,0 +1,19 @@
+<br>
+<%= image_tag "OB.png", height:70 %>
+<br>
+<br>
+<br>
+<br>
+<div class="text-center">
+  <h3>Bonjour <%= @resource.email %>!</h3>
+  <p>Votre compte a été verrouillé en raison d'un nombre excessif de tentatives de connexion infructueuses.</p>
+  <br>
+  <br>
+  <p>Cliquez sur le lien ci-dessous pour déverrouiller votre compte:</p>
+  <p><%= link_to 'Débloquer mon compte', unlock_url(@resource, unlock_token: @token) %></p>
+</div>
+<br>
+<br>
+<br>
+<p class="text-muted">Team Toulouse: </p>
+<p class="text-muted">Nathan CHATEAU, Hadrien MOUSAILLON, Amy MCARTHUR et Xuan WANG </p>

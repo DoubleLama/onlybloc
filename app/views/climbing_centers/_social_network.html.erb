@@ -1,0 +1,26 @@
+<div class="icon-bar out">
+  <% if @climbing_center.twitter? %>
+    <%= link_to @climbing_center.twitter, class:"twitter" do %>
+      <i class="fa fa-twitter"></i>
+    <% end %>
+  <% end %>
+  <% if @climbing_center.facebook?%>
+    <%= link_to @climbing_center.facebook, class:"facebook" do %>
+      <i class="fa fa-facebook"></i>
+    <% end %>
+  <% end %>
+  <% if @climbing_center.instagram?%>
+    <div class="social">
+      <%= link_to @climbing_center.instagram, class:"instagram" do %>
+        <i class="fa fa-instagram"></i>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @climbing_center.linkedin?%>
+    <div class="social">
+      <%= link_to @climbing_center.linkedin, class:"linkedin" do %>
+        <i class="fa fa-linkedin"></i>
+      <% end %>
+    </div>
+  <% end %>
+</div>

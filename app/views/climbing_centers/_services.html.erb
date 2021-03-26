@@ -1,0 +1,44 @@
+<div>
+<% if @climbing_center.hammam==true then %>
+  <%= link_to nil, class:"mx-2", data:{toggle:"tooltip", placement:"top", container:"body", original_title:"Hammam"} do %>
+    <i class="text-danger material-icons">hot_tub</i>
+    <div class="ripple-container"></div>
+  <% end %>
+<% end %>
+<% if @climbing_center.shop==true then %>
+  <%= link_to nil, class:"mx-2", data:{toggle:"tooltip", placement:"top", container:"body", original_title:"Boutique"} do %>
+    <i class="text-info material-icons">store_mall_directory</i>
+    <div class="ripple-container"></div>
+  <% end %>
+<% end %>
+<% if @climbing_center.yoga_classes==true then %>
+  <%= link_to nil, class:"mx-2", data:{toggle:"tooltip", placement:"top", container:"body", original_title:"Cours de yoga"} do %>
+    <%= image_tag "https://cdn.onlinewebfonts.com/svg/img_531726.png", style: 'width:1.1em' %>
+    <div class="ripple-container"></div>
+  <% end %>
+<% end %>
+<% if @climbing_center.workout_space==true then %>
+  <%= link_to nil, class:"mx-2", data:{toggle:"tooltip", placement:"top", container:"body", original_title:"Salle de musculation"} do %>
+    <i class="text-warning material-icons">fitness_center</i>
+    <div class="ripple-container"></div>
+  <% end %>
+<% end %>
+<% if @climbing_center.sauna==true then %>
+  <%= link_to nil, class:"mx-2", data:{toggle:"tooltip", placement:"top", container:"body", original_title:"Sauna"} do %>
+    <%= image_tag "https://user-images.githubusercontent.com/10913793/46910991-55e1e100-cf50-11e8-8d4d-33abdf1fdb82.png", style: 'width:1.5em' %>
+    <div class="ripple-container"></div>
+  <% end %>
+<% end %>
+<% if @climbing_center.restaurant==true then %>
+  <%= link_to nil, class:"mx-2", data:{toggle:"tooltip", placement:"top", container:"body", original_title:"Restaurant"} do %>
+    <i class="text-success material-icons">restaurant</i>
+    <div class="ripple-container"></div>
+  <% end %>
+<% end %>
+<% if @climbing_center.pub==true then %>
+  <%= link_to nil, class:"mx-2", data:{toggle:"tooltip", placement:"top", container:"body", original_title:"Bar"} do %>
+    <i class="text-primary material-icons">local_bar</i>
+    <div class="ripple-container"></div>
+  <% end %>
+<% end %>
+</div>
